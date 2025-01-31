@@ -1,7 +1,7 @@
 $(document).ready(function(){
     let rango=0
     $.ajax({
-        url:"http://127.0.0.1:5000/api/users",
+        url:"https://back-python.vercel.app/api/users",
         method:"GET",
         success:function(data){
             rango=data.length
@@ -9,7 +9,7 @@ $(document).ready(function(){
     
     $('#listar').click(function(){
         $.ajax({
-            url:"http://127.0.0.1:5000/api/users",
+            url:"https://back-python.vercel.app/api/users",
             method:"GET",
             success:function(data){
                 $('#result').html(" ")
@@ -32,7 +32,7 @@ for (let i = 0; i < rango; i++) {
         })
         $('#primer').on('click',function(){
             $.ajax({
-                url:"http://127.0.0.1:5000/api/users/1",
+                url:"https://back-python.vercel.app/api/users/1",
                 method:"GET",
                 success:function(data){
                     $('#result').html(` <div class='carta'>
@@ -49,7 +49,7 @@ for (let i = 0; i < rango; i++) {
             let valor=$('#buscador').val()
             $('#buscador').val("")
             $.ajax({
-                url:`http://127.0.0.1:5000/api/users/${valor}`,
+                url:`https://back-python.vercel.app/api/users/${valor}`,
                 method:"GET",
                 success:function(data){
                     if(valor>=1){
@@ -85,7 +85,7 @@ for (let i = 0; i < rango; i++) {
                     return;
                 }
                 $.ajax({
-                    url: `http://127.0.0.1:5000/api/users`,
+                    url: `https://back-python.vercel.app/api/users`,
                     type: "POST",
                     contentType: "application/json", 
                     data: JSON.stringify({ 
